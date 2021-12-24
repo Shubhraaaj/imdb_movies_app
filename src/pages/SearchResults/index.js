@@ -113,7 +113,7 @@ export default function SearchResults(){
                 }}>
                 {
                     moviesList.map((movie, index) => (
-                        <div ref={lastItemRef}><MovieCard key={index} movie={movie} /></div>
+                        <div ref={lastItemRef} style={{ width: '30%', margin: '10px' }}><MovieCard key={index} movie={movie} /></div>
                 ))
             }
             </Box>

@@ -7,7 +7,7 @@ export default function MovieCard({ movie }) {
     const months = ["January","February","March","April","May","June","July", "August", "September", "October", "November", "December"];
     const [year, month, day] = movie.release_date.split('-');
     return(
-        <Card sx={{ width: '30%', margin: '10px' }}>
+        <Card>
             <CardActionArea>
                 <CardMedia
                     component="img"
