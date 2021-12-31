@@ -8,10 +8,6 @@ import SearchBar from './components/SeachBar';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header />
-    <div style={{padding: 20}}>
-      <SearchBar />
-    </div>
     <App />
   </React.StrictMode>,
   document.getElementById('root')

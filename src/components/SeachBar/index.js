@@ -1,10 +1,27 @@
 import * as React from 'react';
-import { TextField } from '@mui/material';
+import PropTypes from 'prop-types';
 
-export default function SearchBar(){
+SearchBar.propTypes = {
+    searchTerm: PropTypes.string
+};
+
+export default function SearchBar( { searchTerm } ){
     return(
         <div>
-            <TextField label="Search movies by title..."  variant="standard" fullWidth/>
+            <input 
+                id="search" 
+                type="text" 
+                placeholder="Search by title..." 
+                style={{ 
+                    width: "80%", 
+                    padding: 12, 
+                    borderRadius: 18, 
+                    border :"solid #a6a6a6 2px", 
+                    margin: "0 8%" }} 
+                onChange={(e)=>{
+                    searchTerm(e.target.value);
+                }}
+                />
         </div>
     );
 }

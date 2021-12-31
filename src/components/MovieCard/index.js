@@ -1,34 +1,38 @@
 import * as React from 'react';
-import { Card, CardContent, CardMedia, Typography, CardActionArea, Stack, Divider } from '@mui/material';
+import PropTypes from 'prop-types';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
+import { months, imageUrl } from '../../assets/constants';
+
+MovieCard.propTypes = {
+    movie: PropTypes.object
+};
+
 export default function MovieCard({ movie }) {
-    const imageUrl = `http://image.tmdb.org/t/p/original${movie.backdrop_path}`;
-    const months = ["January","February","March","April","May","June","July", "August", "September", "October", "November", "December"];
+    const imgUrl = `${imageUrl}/${movie.backdrop_path}`;
     const [year, month, day] = movie.release_date.split('-');
     return(
-        <Card>
-            <CardActionArea>
-                <CardMedia
-                    component="img"
-                    height="140"
-                    image={imageUrl}
-                    alt="green iguana"
+        <div>
+            <div style={{boxShadow: "0 4px 8px 0 rgba(0,0,0,0.2)"}}>
+                <img
+                    height="auto"
+                    src={imgUrl}
+                    width="100%"
+                    alt="movie poster"
+                    
                 />
-                <CardContent>
-                <Typography gutterBottom variant="h6" component="div" sx={{fontWeight: "bold"}} color="primary">
-                    {movie.title}
-                </Typography>
-                <Stack direction="row" divider={<Divider orientation="vertical" flexItem />} spacing={2}>
-                    <Stack direction="row" spacing={1}>
+                <div style={{ padding: "10px 20px" }}>
+                <h2 style={{ color: "#333366", overflow: "hidden", whiteSpace: "nowrap", margin: "0" }} >{movie.title}</h2>
+                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between"  }}>
+                    <div style={{display:"flex", alignItems: "center", justifyContent: "center"}} spacing={1}>
                         <FavoriteIcon color="error"/>
-                        <Typography variant="body1">{movie.vote_average}</Typography>
-                    </Stack>
-                    <Typography variant="body1">{movie.vote_count} votes</Typography>
-                    <Typography variant="body2">{`${months[Number(month)-1]} ${day}, ${year}`}</Typography>
-                </Stack>
-                </CardContent>
-            </CardActionArea>
-        </Card>
+                        <p style={{marginLeft: "4px"}}>{movie.vote_average}</p>
+                    </div>
+                    <p>{movie.vote_count} votes</p>
+                    <p>{`${months[Number(month)-1]} ${day}, ${year}`}</p>
+                </div>
+                </div>
+            </div>
+        </div>
     );
 }

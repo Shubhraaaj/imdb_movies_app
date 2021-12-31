@@ -1,0 +1,22 @@
+.card_div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.card {
+    width: 30%;
+    margin: 10px
+}
+
+@media only screen and (max-width: 426px) {
+    .card_div{
+        display: block;
+        padding: 10px;
+    }
+
+    .card{
+        width: 100%;
+    }
+}
