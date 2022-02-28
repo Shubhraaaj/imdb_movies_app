@@ -3,6 +3,7 @@ import SearchResults from './pages/SearchResults';
 import Header from './components/Header';
 import SearchBar from './components/SeachBar';
 import { useState } from 'react';
+import MovieDetails from './pages/MovieDetails';
 
 function App() {
   const [searchWord, setSearchWord] = useState("");
@@ -15,6 +16,7 @@ function App() {
         <Header />
         <SearchBar searchTerm={search}/>
         <SearchResults keyword={searchWord}/>
+        {/* <MovieDetails /> */}
     </div>
   );
 }

@@ -3,6 +3,7 @@ import axios from 'axios';
 import PropTypes from 'prop-types';
 import './index.css';
 import MovieCard from '../../components/MovieCard';
+import { url } from '../../assets/constants';
 
 SearchResults.propTypes = {
     keyword: PropTypes.string
@@ -19,7 +20,7 @@ export default function SearchResults( { keyword } ){
         setLoading(true);
         axios({
             method: "get",
-            url: "https://api.themoviedb.org/3/discover/movie?api_key=55903b004b65252bf433fb4218601d2c&la"
+            url: url,
         }).then((res)=>{
             setMoviesList([...moviesList, ...res.data.results]);
             setMovies(moviesList);

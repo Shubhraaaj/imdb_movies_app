@@ -22,15 +22,15 @@ export default function MovieCard({ movie }) {
                     
                 />
                 <div style={{ padding: "10px 20px" }}>
-                <h2 style={{ color: "#333366", overflow: "hidden", whiteSpace: "nowrap", margin: "0" }} >{movie.title}</h2>
-                <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between"  }}>
-                    <div style={{display:"flex", alignItems: "center", justifyContent: "center"}} spacing={1}>
-                        <FavoriteIcon color="error"/>
-                        <p style={{marginLeft: "4px"}}>{movie.vote_average}</p>
+                    <h2 style={{ color: "#333366", overflow: "hidden", whiteSpace: "nowrap", margin: "0" }} >{movie.title}</h2>
+                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between"  }}>
+                        <div style={{display:"flex", alignItems: "center", justifyContent: "center"}} spacing={1}>
+                            <FavoriteIcon color="error"/>
+                            <p style={{marginLeft: "4px"}}>{movie.vote_average}</p>
+                        </div>
+                        <p>{movie.vote_count} votes</p>
+                        <p>{`${months[Number(month)-1]} ${day}, ${year}`}</p>
                     </div>
-                    <p>{movie.vote_count} votes</p>
-                    <p>{`${months[Number(month)-1]} ${day}, ${year}`}</p>
-                </div>
                 </div>
             </div>
         </div>
